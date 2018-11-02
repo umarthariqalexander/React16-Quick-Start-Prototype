@@ -5,12 +5,15 @@ class ErrorBoundary extends Component{
         super(props);
         this.state = {hasError: false};
     }
+    static getDerivedStateFromError(error){
+        return {hasError: true};
+    }
     componentDidCatch(error, info){
         this.setState({hasError: true});
     }
     render(){
         if(this.state.hasError){
-            return <li>Something went wrong</li>
+            return <div>Something went wrong</div>
         }
         return this.props.children;
     }

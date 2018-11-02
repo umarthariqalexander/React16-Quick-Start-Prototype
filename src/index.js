@@ -2,21 +2,25 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import ReactLogo from './images/logo.svg';
 import './styles/index.css';
+import Header from './components/header';
+import Body from './components/body';
+import ErrorBoundary from './ErrorBoundary';
 
 class Welcome extends React.Component{
     constructor(props){
         super(props);
         this.state = {
-            message: 'Welcome to React Self Customized Prototype'
+            orderList: [{name: 'LG', price:'12300'}, {name: 'LG', price:'12300'},{name: 'LG', price:'12300'},{name: 'LG', price:'12300'}],
+            orderObject:{}
         }
     }
     render(){
         return(
-        <div className="App"> 
-            <header className="App-header">
-            <img className="App-logo" src={ReactLogo}/>
-            <p> Hey there, {this.state.message}</p>
-            </header>
+        <div className=""> 
+            <Header headerMessage="Welcome to React 16"/>
+            <ErrorBoundary>
+                <Body orderList={this.state.orderObject}/>
+            </ErrorBoundary>
         </div>);
     }
 }
