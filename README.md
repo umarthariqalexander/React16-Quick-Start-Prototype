@@ -7,4 +7,4 @@ Initial steps
 4. open browser with localhost:8080.
 5. React App opened with hot live reloading webpack dev server.
 
-            ✌️ 😍 **LIVE WITH REACT ** 😍 ✌️
+            ✌️ 😍 **LIVE WITH REACT** 😍 ✌️
