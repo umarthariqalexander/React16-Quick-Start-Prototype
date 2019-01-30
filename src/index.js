@@ -10,7 +10,7 @@ class Welcome extends React.Component{
     render(){
         return(
         <div className="App"> 
-            <AuthContext.Provider value={{isUserLoggedIn: 'yes'}}>
+            <AuthContext.Provider value={{isUserLoggedIn: true}}>
                 <Header/>
             </AuthContext.Provider>
         </div>);
