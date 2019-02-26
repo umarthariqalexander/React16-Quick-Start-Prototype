@@ -1,13 +1,11 @@
 import React from 'react';
 import AuthContext from '../contexts/AuthContext';
 
-const Button = ()=>{
+const Button = React.memo((props)=>{
+    console.log('Render Button');
     return(
-        <AuthContext.Consumer>
-            {context=>(<button>{context.isUserLoggedIn ? 'Logout':'Login'}</button>)}
-        </AuthContext.Consumer>
+        <button>{props.isUserLoggedIn ? 'Logout':'Login'}</button>
     );  
-}
-
+});
 
 export default Button;

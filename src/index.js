@@ -7,12 +7,18 @@ import './styles/index.css';
 
 
 class Welcome extends React.Component{
+    constructor(){
+        super();
+        this.state={
+            clickMe: false
+        };
+    }
     render(){
+        console.log('Parent Renders');
         return(
         <div className="App"> 
-            <AuthContext.Provider value={{isUserLoggedIn: true}}>
-                <Header/>
-            </AuthContext.Provider>
+            <button onClick={()=>{this.setState({clickMe: !this.state.clickMe})}}>Parent Button</button>
+            <Header isUserLoggedIn={true}/>
         </div>);
     }
 }
